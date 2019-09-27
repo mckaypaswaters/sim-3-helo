@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Nav from '../Nav/Nav'
+import './dashboard.css'
 
 class Dashboard extends Component {
     constructor(){
@@ -9,7 +10,14 @@ class Dashboard extends Component {
         return(
             <div className='dashboard'>
                 <Nav/>
-                Dashboard
+                    <div className="white-space">
+                        <div className="search-box">
+                            <input className='search-input' type="text"/>
+                            <i className="fas fa-search"></i>
+                            <button>Reset</button>
+                            <button>X</button>
+                        </div>
+                    </div>
             </div>
         )
     }

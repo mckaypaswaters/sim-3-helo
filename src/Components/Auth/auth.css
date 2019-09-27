@@ -42,7 +42,7 @@ h1 {
 .register {
     margin: 5px 0 15px 25px
 }
-button {
+.login, .register {
     background: radial-gradient(circle at 50% -46%,#737373,#403d39);
     color: white;
     border: none;
