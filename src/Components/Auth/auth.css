@@ -43,7 +43,7 @@ h1 {
     margin: 5px 0 15px 25px
 }
 button {
-    background: linear-gradient(90deg, #403D39, #F2F2F2);
+    background: radial-gradient(circle at 50% -46%,#737373,#403d39);
     color: white;
     border: none;
     outline: none;

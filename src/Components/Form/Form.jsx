@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Nav from '../Nav/Nav'
 
 class Form extends Component {
     constructor(){
@@ -6,7 +7,10 @@ class Form extends Component {
     }
     render(){
         return(
-            <div>Form</div>
+            <div className='form'>
+                <Nav/>
+                Form
+            </div>
         )
     }
 }
