@@ -7,6 +7,9 @@ const app = express()
 
 app.use(express.json())
 
+app.post('/auth/register', ctrl.register)
+app.post('/auth/login', ctrl.login)
+
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db)
     app.listen(SERVER_PORT, () => console.log(`${SERVER_PORT} Days til Halo Infinite`))

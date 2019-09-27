@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import wink from '../../assets/wink.png'
 import './auth.css'
+import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 class Auth extends Component {
     constructor(){
@@ -10,22 +12,41 @@ class Auth extends Component {
             password: ''
         }
     }
+
+    handleChange(e, key){
+        this.setState({
+            [key]: e.target.value
+        })
+    }
+    register(){
+        const {username, password} = this.state
+        axios.post('/auth/register', {username, password})
+
+    }
+    login(){
+        const {username, password} = this.state
+        axios.post('/auth/login', {username, password})
+    }
+
     render(){
-        console.log(this.props)
         return(
             <div className="auth-parent">
                 <div className="auth-box">
                     <img src={wink} alt="winky-logo"/>
                     <h1>Helo</h1>
                     <div className='input-box'>
-                        Username:<input type="text"/>
+                        Username:<input onChange={e => this.handleChange(e, 'username')} type="text"/>
                     </div>
                     <div className='input-box'>
-                        Password:<input type="password"/>
+                        Password:<input onChange={e => this.handleChange(e, 'password')} type="password"/>
                     </div>
                     <nav className="login-register-buttons">
-                        <button className='login'>Login</button>
-                        <button className='register'>Register</button>
+                        {/* <Link to='/dashboard'> */}
+                            <button onClick={() => this.login()}className='login'>Login</button>
+                        {/* </Link> */}
+                        <Link to='/dashboard'>
+                            <button onClick={() => this.register()}className='register'>Register</button>
+                        </Link>
                     </nav>
                 </div>
             </div>
