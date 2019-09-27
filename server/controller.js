@@ -17,14 +17,19 @@ module.exports = {
         res.status(200).send({message: 'Registered!', user: userId})
         
     },
-    login(req, res){
+    async login(req, res){
         const db = req.app.get('db')
         const {username, password} = req.body
-        const user = db.find_user([username, password])
-        if(!user[0]) {
-            return res.status(200).send({message: 'Incorrect username'})
-        } else {
-            return res.status(200).send({message: 'Logged in!', user})
-        }
+
+        // Check if the username exists
+        const user = await db.find_username(username)
+        // If they don't exist send response
+        if (!user[0]) return res.status(200).send({message: 'Username not found'})
+        // Hash password and compare
+        const result = bcrypt.compareSync(password, user[0].password)
+        // If hashes don't match, send response
+        if (!result) return res.status(200).send({message: 'Incorrect password!'})
+        // If they do match, send it to the front end
+        res.status(200).send({message: 'Logged in!', user: user})
     }
 }

@@ -24,9 +24,10 @@ class Auth extends Component {
         const res = await axios.post('/auth/register', {username, password})
         sweet.fire({type: 'success', text: res.data.message})
     }
-    login(){
+    async login(){
         const {username, password} = this.state
-        axios.post('/auth/login', {username, password})
+        const res = await axios.post('/auth/login', {username, password})
+        sweet.fire({type: 'success', text: res.data.message})
     }
 
     render(){
