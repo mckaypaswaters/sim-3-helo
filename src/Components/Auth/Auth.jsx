@@ -3,6 +3,7 @@ import wink from '../../assets/wink.png'
 import './auth.css'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import sweet from 'sweetalert2'
 
 class Auth extends Component {
     constructor(){
@@ -18,10 +19,10 @@ class Auth extends Component {
             [key]: e.target.value
         })
     }
-    register(){
+    async register(){
         const {username, password} = this.state
-        axios.post('/auth/register', {username, password})
-
+        const res = await axios.post('/auth/register', {username, password})
+        sweet.fire({type: 'success', text: res.data.message})
     }
     login(){
         const {username, password} = this.state
