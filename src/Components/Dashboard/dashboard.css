@@ -1,10 +1,13 @@
 .white-space {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
     width: 100%;
     background: #F2F2F2;
 }
 .search-box {
+    margin: 40px 0 10px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,4 +18,39 @@
 }
 .search-input {
     width: 500px;
+}
+.posts-box {
+    background: white;
+    height: auto;
+    width: 75%;
+    box-shadow: .5px .5px 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.single-post {
+    display: flex;
+    flex-direction: row;
+    height: 75px;
+    /* width: 95%; */
+    background: white;
+    box-shadow: .5px .5px 5px;
+    margin: 30px 0;
+}
+.post-title {
+    margin-left: 25px;
+}
+.author-and-pic {
+    display: flex;
+    flex-direction: row;
+}
+.author {
+    margin: 0 0 0 575px;
+}
+.post-profile-pic {
+    filter: invert(0);
+    border-radius: 50%;
+    height: auto;
+    width: 75px;
 }

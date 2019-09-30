@@ -2,7 +2,7 @@
 const initialState = {
     username: '',
     password: '',
-    profilePic: 'https://picsum.photos/200/'
+    profilePic: ''
 }
 
 // ACTION CONSTS
@@ -20,7 +20,7 @@ export const getUser = (userObj) => {
 const reducer = (state = initialState, action) => {
     switch(action.type){
         case GET_USER:
-            return {...state, username: action.payload.username, password: action.payload.password}
+            return {...state, username: action.payload.username, password: action.payload.password, profilePic: action.payload.profile_pic}
         default: return state
     }
 }

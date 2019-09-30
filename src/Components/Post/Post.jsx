@@ -9,7 +9,8 @@ class Post extends Component {
         return(
             <div className='post'>
                 <Nav/>
-                Post
+                {/* <h2 className="post-title">Test</h2>
+                <h5 className="author">Test</h5> */}
             </div>
         )
     }

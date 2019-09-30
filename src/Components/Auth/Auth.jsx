@@ -24,6 +24,7 @@ class Auth extends Component {
     async register(){
         const {username, password} = this.state
         const res = await axios.post('/auth/register', {username, password})
+        console.log(res.data)
         if (res.data.user){
             this.props.getUser(res.data.user)
         }
@@ -33,6 +34,7 @@ class Auth extends Component {
         const {username, password} = this.state
         const res = await axios.post('/auth/login', {username, password})
         if (res.data.user){
+            console.log(res.data.user[0])
             this.props.getUser(res.data.user[0])
             sweet.fire({type: 'success', text: res.data.message})
         } else {

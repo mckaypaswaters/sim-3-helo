@@ -18,3 +18,5 @@ CREATE TABLE posts (
 SELECT * FROM users;
 SELECT * FROM posts;
 
+SELECT u.username, u.profile_pic, p.title, p.img, p.content FROM posts p
+JOIN users u ON p.author_id = u.id;
