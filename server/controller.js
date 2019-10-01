@@ -21,7 +21,6 @@ module.exports = {
     async login(req, res){
         const db = req.app.get('db')
         const {username, password} = req.body
-
         // Check if the username exists
         const user = await db.find_username(username)
         // If they don't exist send response
@@ -52,8 +51,14 @@ module.exports = {
         } else if (userposts === 'true' && search === ''){
             res.status(200).send(posts)
         } else {
-            res.status(200).send(posts)
+            res.status(200).send(posts, id)
         }
+    },
+    async getOnePost(req, res){
+        const db = req.app.get('db')
+        const {id} = req.params
+        const onePost = await db.get_one_post(id)
+        res.status(200).send(onePost)
     }
 }
 

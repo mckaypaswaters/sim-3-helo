@@ -24,7 +24,7 @@ class Auth extends Component {
     async register(){
         const {username, password} = this.state
         const res = await axios.post('/auth/register', {username, password})
-        console.log(res.data)
+        // console.log(res.data)
         if (res.data.user){
             this.props.getUser(res.data.user)
         }
@@ -34,7 +34,6 @@ class Auth extends Component {
         const {username, password} = this.state
         const res = await axios.post('/auth/login', {username, password})
         if (res.data.user){
-            console.log(res.data.user[0])
             this.props.getUser(res.data.user[0])
             sweet.fire({type: 'success', text: res.data.message})
         } else {
@@ -46,8 +45,8 @@ class Auth extends Component {
         return(
             <div className="auth-parent">
                 <div className="auth-box">
-                    <img src={wink} alt="winky-logo"/>
-                    <h1>Helo</h1>
+                    <img className='wink-img' src={wink} alt="winky-logo"/>
+                    <h1 className='auth-title'>Helo</h1>
                     <div className='input-box'>
                         Username:<input onChange={e => this.handleChange(e, 'username')} type="text"/>
                     </div>

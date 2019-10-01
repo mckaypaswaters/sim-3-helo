@@ -2,7 +2,8 @@
 const initialState = {
     username: '',
     password: '',
-    profilePic: ''
+    profilePic: '',
+    id: 0
 }
 
 // ACTION CONSTS
@@ -20,7 +21,11 @@ export const getUser = (userObj) => {
 const reducer = (state = initialState, action) => {
     switch(action.type){
         case GET_USER:
-            return {...state, username: action.payload.username, password: action.payload.password, profilePic: action.payload.profile_pic}
+            return {...state, 
+                username: action.payload.username, 
+                password: action.payload.password, 
+                profilePic: action.payload.profile_pic,
+                id: action.payload.id}
         default: return state
     }
 }

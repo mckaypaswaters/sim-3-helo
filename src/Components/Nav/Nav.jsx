@@ -13,7 +13,7 @@ class Nav extends Component {
                 <div className='column'>
                     <nav className='first-3'>
                         <img className='profile-pic'src={this.props.profilePic} alt=""/>
-                        <h4>{this.props.username}</h4>
+                        <h4 className='nav-username'>{this.props.username}</h4>
                         <Link className='link' to='/dashboard'>
                             <i className="home fas fa-home"></i>
                         </Link>

@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: center;
     height: 50px;
-    box-shadow: .5px .5px 5px;
+    box-shadow: .5px .5px 2px;
     width: 75%;
     background: white;
 }
@@ -23,7 +23,7 @@
     background: white;
     height: auto;
     width: 75%;
-    box-shadow: .5px .5px 5px;
+    box-shadow: .5px .5px 2px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -35,7 +35,7 @@
     height: 75px;
     /* width: 95%; */
     background: white;
-    box-shadow: .5px .5px 5px;
+    box-shadow: .5px .5px 2px;
     margin: 30px 0;
 }
 .post-title {

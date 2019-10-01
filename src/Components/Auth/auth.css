@@ -16,13 +16,13 @@
     width: 36%;
     box-shadow: 3px 3px 15px black;
 }
-img {
+.wink-img {
     margin-top: 15px;
     filter: invert(100%);
     width: 150px;
     height: auto;
 }
-h1 {
+.auth-title {
     color: white;
     font-size: 64px;
     font-weight: 900;

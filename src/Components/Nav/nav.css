@@ -21,7 +21,7 @@
     border-radius: 50%;
     filter: invert(0);
 }
-h4 {
+.nav-username {
     margin: 15px 0 0 0;
     color: white;
 }
